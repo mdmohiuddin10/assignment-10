@@ -67,10 +67,11 @@ async function run() {
             type:updatedProduct.type,
              price:updatedProduct.price,
               photo:updatedProduct.photo,
-               rating:updatedProduct.rating
+               rating:updatedProduct.rating,
+               description:updatedProduct.description
         }
       }
-      const result = await productCollection.updateOne(filter, product, options)
+      const result = await productCollection.updateMany(filter, product, options)
       res.send(result)
     })
 
