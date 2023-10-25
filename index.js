@@ -40,12 +40,12 @@ async function run() {
       res.send(result)
     })
 
-    app.get('/addProduct/:id', async(req, res)=>{
-      const id = req.params.id;
-      const qurey = { _id: new ObjectId(id)}
-      const result = await productCollection.findOne(qurey)
-      res.send(result)
-    })
+    // app.get('/addProduct/:id', async(req, res)=>{
+    //   const id = req.params.id;
+    //   const qurey = { _id: new ObjectId(id)}
+    //   const result = await productCollection.findOne(qurey)
+    //   res.send(result)
+    // })
 
 
     app.post('/addProduct', async (req, res) => {
@@ -98,15 +98,12 @@ async function run() {
       res.send(result)
     })
 
-
     app.delete('/addToCart/:id', async(req, res)=>{
       const id = req.params.id;
       const qurey = { _id: new ObjectId(id)}
       const result = await selectedCollection.deleteMany(qurey)
       res.send(result)
     })
-
-
 
 
     // Send a ping to confirm a successful connection
@@ -124,7 +121,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('server running')
+  res.send('mobile shop server is running')
 })
 
 app.listen(port, () => {
